@@ -1,12 +1,18 @@
 # Owl Template CLI
 
-## USE
+## Install
 
 ```bash
 $ npm install owl-template-cli -g
 ```
 
-## HELP
+## Use
+
+```bash
+$ owl [commands]
+```
+
+## Help
 
 ```bash
 Options:
