@@ -1,0 +1,43 @@
+#!/usr/bin/env node
+
+const { resolve } = require('path')
+const program = require('commander')
+const { version } = require(resolve(__dirname, '../package.json'))
+const co = require('co')
+const prompt = require('co-prompt')
+
+process.env.NODE_PATH = resolve(__dirname, '../node_modules/')
+
+program.version(version)
+
+program.usage('<command>')
+
+program
+  .command('add')
+  .description('Add a new template')
+  .alias('a')
+  .action(() => require('../src/command/add')() )
+
+program
+  .command('list')
+  .description('List all templates')
+  .alias('l')
+  .action(() => require('../src/command/list')() )
+
+program
+  .command('delete')
+  .description('Delete a template')
+  .alias('d')
+  .action(() => require('../src/command/del')() )
+
+program
+  .command('init')
+  .description('Generate a new project')
+  .alias('i')
+  .action(() => require('../src/command/init')() )
+
+program.parse(process.argv)
+
+if(!program.args.length) {
+  program.help()
+}

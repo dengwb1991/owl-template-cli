@@ -1,0 +1,8 @@
+{
+  "tpl": {
+    "owl-create-api": {
+      "url": "git@github.com:dengwb1991/owl-create-api.git",
+      "branch": "master"
+    }
+  }
+}
